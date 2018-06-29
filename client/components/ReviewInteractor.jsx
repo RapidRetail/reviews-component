@@ -8,10 +8,10 @@ class ReviewInteractor extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      votedHelpful: this.props.review.votedHelpful,
-      votedNotHelpful: this.props.review.votedNotHelpful,
+      votedHelpful: this.props.review.votedhelpful,
+      votedNotHelpful: this.props.review.votednothelpful,
       inappropriate: this.props.review.inappropriate,
-      id: this.props.review.reviewId,
+      id: this.props.review.reviewid,
       leftFeedback: null,
     };
     this.updateReview = this.updateReview.bind(this);

@@ -12,36 +12,36 @@ class App extends React.Component {
     super(props);
     this.state = {
       // productId: window.location.search.slice(1),
-      productId: 1,
-      reviews: [],
+      reviews: this.props.reviews,
     };
-    this.getReviews = this.getReviews.bind(this);
+    // this.getReviews = this.getReviews.bind(this);
   }
-  componentDidMount() {
-    this.getReviews();
-  }
-  getReviews() {
-    axios.get(`/reviews/${this.state.productId}/`)
-      .then((res) => {
-        this.setState({
-          reviews: [...res.data],
-        });
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }
+  // componentDidMount() {
+  //   this.getReviews();
+  // }
+  // getReviews() {
+  //   axios.get(`/reviews/${this.state.productId}/`)
+  //     .then((res) => {
+  //       this.setState({
+  //         reviews: [...res.data],
+  //       });
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // }
   render() {
     return (
       <BodyWrapper>
         {
           this.state.reviews.map(review => (
-            <ReviewRow review={review} key={review.reviewId} />))
+            <ReviewRow review={review} key={review.reviewid} />))
         }
       </BodyWrapper>
     );
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('reviews'));
-
+fetch(`/reviews-module/reviews/${window.location.pathname.slice(1)}`).then(response => response.json().then(body => {
+  ReactDOM.render(<App reviews={body}/>, document.getElementById('reviews'));
+}))

@@ -3,14 +3,14 @@ import UserInfoEntry from './UserInfoEntry.jsx';
 
 const UserInfoContainer = ({
   review: {
-    city, state, country, athleticType, age, bodyType,
+    city, state, country, athletictype, age, bodytype,
   },
 }) => (
   <div>
     <UserInfoEntry label="LOCATION" value={`${city}, ${state.toUpperCase()}, ${country}`} />
-    <UserInfoEntry label="ATHLETIC TYPE" value={athleticType} />
+    <UserInfoEntry label="ATHLETIC TYPE" value={athletictype} />
     <UserInfoEntry label="AGE" value={age} />
-    <UserInfoEntry label="BODY TYPE" value={bodyType} />
+    <UserInfoEntry label="BODY TYPE" value={bodytype} />
   </div>
 );
 

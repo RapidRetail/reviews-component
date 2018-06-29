@@ -1,7 +1,3 @@
-DROP DATABASE IF EXISTS  lululemon;
-CREATE DATABASE lululemon;
-USE lululemon;
-
 CREATE TABLE products (
 	id int PRIMARY KEY
 );
@@ -51,16 +47,16 @@ CREATE TABLE reviews (
 -- NOTE: YOUR VERSION OF SQL MIGHT NOT PERMIT THE USE OF 'LOCAL'
 -- ****************************************************************************
 
--- LOAD DATA LOCAL INFILE './users.csv' 
--- INTO TABLE users 
--- FIELDS TERMINATED BY ',' 
+-- LOAD DATA LOCAL INFILE './users.csv'
+-- INTO TABLE users
+-- FIELDS TERMINATED BY ','
 -- -- ENCLOSED BY '"'
 -- LINES TERMINATED BY '\n'
 -- IGNORE 1 ROWS;
 
--- LOAD DATA LOCAL INFILE './reviews.csv' 
--- INTO TABLE reviews 
--- FIELDS TERMINATED BY ',' 
+-- LOAD DATA LOCAL INFILE './reviews.csv'
+-- INTO TABLE reviews
+-- FIELDS TERMINATED BY ','
 -- -- ENCLOSED BY '"'
 -- LINES TERMINATED BY '\n'
 -- IGNORE 1 ROWS;
@@ -72,14 +68,14 @@ CREATE TABLE reviews (
 -- INSERT INTO products (id) VALUES (2);
 -- INSERT INTO products (id) VALUES (3);
 
--- INSERT INTO users (id, active_since, nickname, age, body_type, athletic_type, city, state, country) 
+-- INSERT INTO users (id, active_since, nickname, age, body_type, athletic_type, city, state, country)
 -- 	VALUES (1000, "2014-01-24 09:02:44", "jmicca", 24, "athletic", "yogi", "irvine", "ca", "usa");
--- INSERT INTO users (id, active_since, nickname, age, body_type, athletic_type, city, state, country) 
+-- INSERT INTO users (id, active_since, nickname, age, body_type, athletic_type, city, state, country)
 -- 	VALUES (1001, "2012-06-24 04:02:35", "smonno", 33, "curvy", "runner", "yerbavista", "ca", "usa");
 
 -- INSERT INTO reviews (title, created_at, rating, details, fit, what_you_like, what_you_didnt_like, user_id, product_id, voted_helpful)
--- 	VALUES ("almost there...", "2018-11-06 14:02:44", 3, "i really wanted to love these but the material just isn't good.", 
+-- 	VALUES ("almost there...", "2018-11-06 14:02:44", 3, "i really wanted to love these but the material just isn't good.",
 -- 					"tight", "the style", "the material", 1000, 1, 3);
 -- INSERT INTO reviews (title, created_at, rating, details, fit, what_you_like, user_id, product_id, voted_helpful)
--- 	VALUES ("this was great!", "2017-01-18 16:02:11", 5, "the color wasn't exactly what was shown on the website but I liked in anyway", 
+-- 	VALUES ("this was great!", "2017-01-18 16:02:11", 5, "the color wasn't exactly what was shown on the website but I liked in anyway",
 -- 					"tight", "the style", 1001, 1, 1);

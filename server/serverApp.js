@@ -11,10 +11,11 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 app.use((req, res, next) => {
-  console.log('Lukes\'s server recieved this request: ', req.originalUrl);
+  console.log('Lukes\'s server received this request: ', req.originalUrl);
   next();
 });
-app.use('/', express.static(path.join(__dirname, '../public')));
+const numericalId = /\/\d+/
+app.use(numericalId, express.static(path.join(__dirname, '../public')));
 app.use('/reviews-module', express.static(path.join(__dirname, '../public')));
 // app.use('/reviews-module', (req, res, next) => {
 //   // console.log('req.originalUrl', req.originalUrl);
@@ -27,7 +28,7 @@ app.use('/reviews-module', express.static(path.join(__dirname, '../public')));
 /* ******** ROUTING *************************** */
 app.get('/reviews-module/reviews/:productId/', (req, res) => {
   db.getReviews(req.params.productId, (reviews) => {
-    res.status(200).send(reviews);
+    res.status(200).send(reviews.rows);
   });
 });
 app.put('/reviews-module/reviews', (req, res) => {

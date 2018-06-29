@@ -20,6 +20,8 @@
     "db.js": "^0.15.0",
     "express": "^4.16.3",
     "mysql": "^2.15.0",
+    "newrelic": "^4.2.0",
+    "pg": "^7.4.3",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "styled-components": "^3.3.2"
