@@ -1,7 +1,11 @@
 const { Client } = require('pg')
 const helpers = require('./helpers.js');
 
-const client = new Client({ database: 'postgres' });
+const client = new Client({
+  database: 'postgres',
+  user: 'postgres',
+  password: 'password'
+});
 client.connect();
 
 const getReviews = function (productId, callback) {
